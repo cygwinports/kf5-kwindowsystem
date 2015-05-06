@@ -1,0 +1,27 @@
+inherit kf5
+
+NAME="kf5-kwindowsystem"
+VERSION=5.9.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 window system access library"
+DESCRIPTION="KWindowSystem provides information about the windowing system and
+allows interaction with the windowing system. It provides an high level API
+which is windowing system independent and has platform specific implementations.
+This API is inspired by X11 and thus not all functionality is available on all
+windowing systems."
+
+PKG_NAMES="libKF5WindowSystem5 libKF5WindowSystem-devel"
+libKF5WindowSystem5_CONTENTS="
+	usr/bin/cygKF5WindowSystem-5.dll
+	usr/share/doc/
+	usr/share/locale/
+"
+libKF5WindowSystem_devel_REQUIRES="libQt5Core-devel libQt5Gui-devel libX11-devel libxcb-devel"
+libKF5WindowSystem_devel_CONTENTS="
+	usr/include/KF5/KWindowSystem/
+	usr/include/KF5/kwindowsystem_version.h
+	usr/lib/cmake/KF5WindowSystem/
+	${QT5_MKSPECSDIR#/}/modules/qt_KWindowSystem.pri
+	usr/lib/libKF5WindowSystem.dll.a
+"
