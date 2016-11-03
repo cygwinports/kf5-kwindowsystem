@@ -1,0 +1,13 @@
+--- origsrc/kwindowsystem-5.27.0/src/platforms/CMakeLists.txt	2016-10-02 05:01:58.000000000 -0500
++++ src/kwindowsystem-5.27.0/src/platforms/CMakeLists.txt	2016-11-01 17:44:49.767126600 -0500
+@@ -1,7 +1,9 @@
+ if(APPLE)
+     add_subdirectory(osx)
+ endif()
+-add_subdirectory(wayland)
++if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
++    add_subdirectory(wayland)
++endif()
+ if(WIN32)
+     add_subdirectory(windows)
+ endif()

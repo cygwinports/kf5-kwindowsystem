@@ -1,7 +1,7 @@
 inherit kf5
 
 NAME="kf5-kwindowsystem"
-VERSION=5.12.0
+VERSION=5.27.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="KDE 5 window system access library"
@@ -11,9 +11,12 @@ which is windowing system independent and has platform specific implementations.
 This API is inspired by X11 and thus not all functionality is available on all
 windowing systems."
 
+PATCH_URI="5.27.0-wayland-linux.patch"
+
 PKG_NAMES="libKF5WindowSystem5 libKF5WindowSystem-devel"
 libKF5WindowSystem5_CONTENTS="
 	usr/bin/cygKF5WindowSystem-5.dll
+	usr/lib/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/
 	usr/share/doc/
 	usr/share/locale/
 "
